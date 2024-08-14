@@ -1,5 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+:root {
+	--primary-color: #b74b4b;
+	--secondary-color: #ca8a04;
+	--text-color: #f0f0f0;
+	--navbar-color: #0f1016;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
+
+html {
+	font-size: 12pt;
+	font-family: Poppins, 'Segoe UI', Tahoma, sans-serif;
+}
+
+nav {
+	height: 60px;
+	background-color: var(--primary-color);
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+
+}
+
+.links-container {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-end;
+	margin-right: 1rem;
+}
+
+nav ul {
+	list-style: none;
+}
+
+nav ul li a {
+	height: 100%;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: var(--text-color);
+	border: 2px solid transparent;
+}
+
+nav ul li a:hover, nav ul li a:active {
+	border-top-color: var(--secondary-color);
+  	border-bottom-color: var(--secondary-color);
+  	color: var(--secondary-color);
+}
+
+nav svg {
+	fill: var(--text-color);
+}
+
+nav svg:hover, nav svg:active {
+	fill: var(--secondary-color);
+}
+
+#sidebar-active {
+	display: none;
+}
+
+.open-sidebar-button, .close-sidebar-button {
+	display: none;
+}
+
+h1.logo {
+	width: 100%;
+	margin-left: 2rem;
+	color: var(--text-color);
+}
+
+h1.logo:hover {
+	color: var(--secondary-color);
+}
+
+@media(max-width: 949px) {
+	.links-container {
+		flex-direction: column;
+		align-items: flex-start;
+
+		position: fixed;
+		top: 0;
+		right: -100%;
+		z-index: 10;
+		width: 300px;
+
+		background-color: var(--navbar-color);
+		box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+		justify-content: flex-start;
+		transition: 1s ease-out;
+		margin-right: 0;
+	}
+
+	nav ul li:hover, nav ul li:active {
+		width: 100%;
+		background-color: var(--primary-color);
+	}
+
+	nav ul li a {
+		height: auto;
+		width: 100%;
+		padding: 20px 30px;
+		justify-content: flex-start;
+		border: none;
+	}
+
+	nav ul li a:hover, nav a:active {
+		color: var(--secondary-color);
+	}
+
+	.open-sidebar-button, .close-sidebar-button {
+		padding: 20px;
+		display: block;
+	}
+
+	.open-sidebar-button:hover, .open-sidebar-button:active, .close-sidebar-button:hover, .close-sidebar-button:active {
+		color: var(--secondary-color);
+	}
+
+	#sidebar-active:checked ~ .links-container {
+		right: 0;
+	}
+
+	#sidebar-active:checked ~ #overlay {
+		height: 100%;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 9;
+	}
+
+	.image img {
+    	grid-area: 1/1/2/2;
+  	}
+}
+
+@media(max-width: 240px) {
+	h1.logo {
+		display: none;
+	}
+}
+
