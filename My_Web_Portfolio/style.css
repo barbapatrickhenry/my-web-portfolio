@@ -24,7 +24,7 @@ nav {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-
+  border-bottom: 1px solid black;
 }
 
 .links-container {
@@ -53,8 +53,8 @@ nav ul li a {
 
 nav ul li a:hover, nav ul li a:active {
 	border-top-color: var(--secondary-color);
-  	border-bottom-color: var(--secondary-color);
-  	color: var(--secondary-color);
+  border-bottom-color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 nav svg {
@@ -83,71 +83,299 @@ h1.logo:hover {
 	color: var(--secondary-color);
 }
 
+#about-me-section {
+  background-color: black;
+  color: var(--text-color);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 0 0 auto;
+  margin: 1rem; 
+}
+
+.item img {
+  border-radius: 100%;
+  max-width: 100%; 
+  height: auto; 
+}
+
+.about {
+  max-width: 600px; 
+}
+
+.typing-text {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  color: white;
+}
+
+.typing-text span {
+  position: relative;
+}
+
+.typing-text span:before {
+  content: "Web Developer";
+  color: #b74b4b;
+  animation: words 20s infinite;
+}
+
+typing-text span:after {
+  content:"";
+  background-color: black;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid black;
+  right: -8;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes words {
+  0%, 20% {
+    content: "Web Developer";
+  }
+  21%, 40% {
+    content: "Front-End Developer";
+  }
+  41%, 60% {
+    content: "Back-End Developer";
+  }
+  61%, 80% {
+    content: "Full Stack Developer";
+  }
+  81%, 100% {
+    content: "Computer Programmer";
+  }
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action-btns {
+  display: flex;
+  gap: 1rem;
+}
+
+.action-btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire-me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hire-me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
+}
+
+/* Responsive Adjustments */
+
+@media (width < 1305px) {
+  
+  .container {
+    text-align: center;
+  }
+
+  .action-btns {
+    justify-content: center;
+  }
+}
+
 @media(max-width: 949px) {
-	.links-container {
-		flex-direction: column;
-		align-items: flex-start;
+  .links-container {
+    flex-direction: column;
+    align-items: flex-start;
 
-		position: fixed;
-		top: 0;
-		right: -100%;
-		z-index: 10;
-		width: 300px;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 10;
+    width: 300px;
 
-		background-color: var(--navbar-color);
-		box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-		justify-content: flex-start;
-		transition: 1s ease-out;
-		margin-right: 0;
-	}
+    background-color: var(--navbar-color);
+    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
+    justify-content: flex-start;
+    transition: 1s ease-out;
+    margin-right: 0;
+  }
 
-	nav ul li:hover, nav ul li:active {
-		width: 100%;
-		background-color: var(--primary-color);
-	}
+  nav ul li:hover, nav ul li:active {
+    width: 100%;
+    background-color: var(--primary-color);
+  }
 
-	nav ul li a {
-		height: auto;
-		width: 100%;
-		padding: 20px 30px;
-		justify-content: flex-start;
-		border: none;
-	}
+  nav ul li a {
+    height: auto;
+    width: 100%;
+    padding: 20px 30px;
+    justify-content: flex-start;
+    border: none;
+  }
 
-	nav ul li a:hover, nav a:active {
-		color: var(--secondary-color);
-	}
+  nav ul li a:hover, nav a:active {
+    color: var(--secondary-color);
+  }
 
-	.open-sidebar-button, .close-sidebar-button {
-		padding: 20px;
-		display: block;
-	}
+  .open-sidebar-button, .close-sidebar-button {
+    padding: 20px;
+    display: block;
+  }
 
-	.open-sidebar-button:hover, .open-sidebar-button:active, .close-sidebar-button:hover, .close-sidebar-button:active {
-		color: var(--secondary-color);
-	}
+  .open-sidebar-button:hover, .open-sidebar-button:active, .close-sidebar-button:hover, .close-sidebar-button:active {
+    color: var(--secondary-color);
+  }
 
-	#sidebar-active:checked ~ .links-container {
-		right: 0;
-	}
+  #sidebar-active:checked ~ .links-container {
+    right: 0;
+  }
 
-	#sidebar-active:checked ~ #overlay {
-		height: 100%;
-		width: 100%;
-		position: fixed;
-		top: 0;
-		left: 0;
-		z-index: 9;
-	}
-
-	.image img {
-    	grid-area: 1/1/2/2;
-  	}
+  #sidebar-active:checked ~ #overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+  }
 }
 
-@media(max-width: 240px) {
-	h1.logo {
-		display: none;
-	}
+@media (width < 776px) {
+  .typing-text {
+    font-size: 28px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .action-btns {
+    flex-direction: column;
+  }
+
+  .action-btns button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
 }
 
+@media (width < 650px) {
+  .container {
+    padding: 1rem; 
+  }
+
+  .item {
+    flex: 1 1 100%; 
+    margin: 0; 
+  }
+
+  .item img {
+    max-width: 80%; 
+    height: auto; 
+  }
+
+  .typing-text {
+    font-size: 24px; 
+  }
+
+  .title {
+    font-size: 1.75rem; 
+  }
+
+  .description {
+    font-size: 0.8rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .typing-text {
+    font-size: 22px; 
+  }
+
+  .title {
+    font-size: 1.5rem; 
+  }
+
+  .description {
+    font-size: 0.7rem; 
+  }
+}
+
+@media (max-height: 800px) {
+  #about-me-section {
+    padding: 1rem; 
+  }
+
+  .typing-text {
+    font-size: 22px; 
+  }
+
+  .title {
+    font-size: 1.5rem; 
+  }
+
+  .description {
+    font-size: 0.7rem; 
+  }
+
+  .action-btns {
+    flex-direction: column;
+    gap: 0.5rem; 
+  }
+
+  .item img {
+    max-width: 60%;
+  }
+}
