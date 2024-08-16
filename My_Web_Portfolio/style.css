@@ -88,6 +88,58 @@ h1.logo:hover {
   color: var(--text-color);
 }
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  height: 60px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background-color: #b74b4b;
+  border-top: 1px solid black;
+}
+
+.footer-icons {
+  display: flex;
+  align-items: center;
+}
+
+.clock {
+  margin: 1rem;
+}
+
+.phone-icon {
+  display: none;
+  margin: 1rem;
+}
+
+.tablet-icon {
+  display: none;
+  margin: 1rem;
+}
+
+.laptop-icon {
+  display: none;
+  margin: 1rem;
+}
+
+.computer-icon {
+  display: none;
+  margin: 1rem;
+}
+
+.copyright {
+  display: flex;
+}
+
+.copyright div{
+  padding-right: 2rem;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -97,7 +149,7 @@ h1.logo:hover {
 }
 
 .item {
-  flex: 0 0 auto;
+  flex: 0 0 auto; 
   margin: 1rem; 
 }
 
@@ -219,7 +271,7 @@ typing-text span:after {
 
 /* Responsive Adjustments */
 
-@media (width < 1305px) {
+@media (width <= 1280px) {
   
   .container {
     text-align: center;
@@ -230,7 +282,19 @@ typing-text span:after {
   }
 }
 
-@media(max-width: 949px) {
+@media (width >= 1200px) {
+  .computer-icon {
+    display: flex;
+  }
+}
+
+@media (min-device-width: 993px) and (max-device-width: 1199px) {
+  .laptop-icon {
+    display: flex;
+  }
+}
+
+@media(width < 992px) {
   .links-container {
     flex-direction: column;
     align-items: flex-start;
@@ -288,7 +352,13 @@ typing-text span:after {
   }
 }
 
-@media (width < 776px) {
+@media (min-device-width: 768px) and (max-device-width: 992px) {
+  .tablet-icon {
+    display: flex;
+  }
+}
+
+@media (width < 768px) {
   .typing-text {
     font-size: 28px;
   }
@@ -309,6 +379,14 @@ typing-text span:after {
     width: 100%;
     margin-bottom: 0.5rem;
   }
+
+  .copyright div {
+    display: none;
+  }
+
+  .phone-icon {
+    display: flex;
+  }
 }
 
 @media (width < 650px) {
@@ -322,6 +400,7 @@ typing-text span:after {
   }
 
   .item img {
+
     max-width: 80%; 
     height: auto; 
   }
@@ -337,6 +416,7 @@ typing-text span:after {
   .description {
     font-size: 0.8rem; 
   }
+
 }
 
 @media (max-width: 480px) {
@@ -351,6 +431,16 @@ typing-text span:after {
   .description {
     font-size: 0.7rem; 
   }
+}
+
+@media (width <= 375px) {
+  .clock {
+    display: none;
+  } 
+
+  #datetime {
+    margin-left: 1rem;
+  } 
 }
 
 @media (max-height: 800px) {
@@ -368,11 +458,6 @@ typing-text span:after {
 
   .description {
     font-size: 0.7rem; 
-  }
-
-  .action-btns {
-    flex-direction: column;
-    gap: 0.5rem; 
   }
 
   .item img {
