@@ -3,6 +3,7 @@
 :root {
 	--primary-color: #b74b4b;
 	--secondary-color: #ca8a04;
+  --light-color: #f0f8ff;
 	--text-color: #f0f0f0;
 	--navbar-color: #0f1016;
 }
@@ -25,11 +26,11 @@ nav {
 	justify-content: flex-end;
 	align-items: center;
   border-bottom: 1px solid black;
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Align it to the top */
-  left: 0; /* Align it to the left */
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .links-container {
@@ -94,8 +95,11 @@ h1.logo:hover {
 }
 
 #projects-section {
-  min-height: calc(100vh - 60px);
-  background-color: #edf4ff;
+  background-color: var(--light-color);
+}
+
+#skills-section {
+  background-color: var(--secondary-color);
 }
 
 #container-project {
@@ -104,10 +108,22 @@ h1.logo:hover {
   justify-content: center;
 }
 
-h1.project-title {
+h1.project-title,
+h1.skills-title {
   text-align: center;
   font-size: 2.5rem;
-  padding-top: 3rem;
+  margin: 3rem 0;
+  padding: 0;
+}
+
+#projects-section,
+#skills-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
+  min-height: calc(100vh - 60px);
 }
 
 .card-container {
@@ -121,6 +137,7 @@ h1.project-title {
 .card {
   background-color: var(--primary-color);
   border-radius: 8px;
+  border: 1px solid black;
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -131,28 +148,28 @@ h1.project-title {
 .card img {
   width: 100%;
   height: 100%; 
-  object-fit: cover; /* Ensures the image covers the area without distortion */
+  object-fit: cover; 
 }
 
 .card-content {
   padding: 16px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distributes space between header, text, and button */
-  height: 100%; /* Ensures the content area fills the card */
+  justify-content: space-between; 
+  height: 100%; 
   text-align: center;
 }
 
 .card-content h3 {
-  font-size: 20px; /* Adjust as needed */
+  font-size: 20px; 
   margin-bottom: 8px;
 }
 
 .card-content p {
   color: white;
-  font-size: 14px; /* Adjust as needed */
+  font-size: 14px; 
   line-height: 1.3;
-  flex: 1; /* Allows text to take remaining space */
+  flex: 1; 
 }
 
 .card-content .btn {
@@ -163,7 +180,151 @@ h1.project-title {
   border-radius: 4px;
   margin-top: 16px;
   color: #fff;
-  align-self: center; /* Align button to start */
+  align-self: center; 
+}
+
+.skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab-content-1 h2,
+.tab-content-2 h2,
+.tab-content-3 h2,
+.tab-content-4 h2,
+.tab-content-5 h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-block-end: 0.5em;
+  text-align: center;
+  padding-top: 1rem;
+  font-weight: 600;
+}
+
+.tab-content-1 ul li,
+.tab-content-2 ul li,
+.tab-content-3 ul li,
+.tab-content-4 ul li,
+.tab-content-5 ul li {
+  list-style: none;
+  text-align: left;
+}
+
+.tab-content-1 ul li:not,
+.tab-content-2 ul li:not,
+.tab-content-3 ul li:not,
+.tab-content-4 ul li:not,
+.tab-content-5 ul li:not(:last-child) {
+  margin-block-end: 1em;
+}
+
+.widget {
+  width: 80vw;
+  max-width: 1000px;
+  padding: 1rem;
+  margin:  2rem auto;
+  border-radius: 1rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--light-color);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.025);
+}
+
+.tabs {
+  --tab-count: 5;
+  --active: 0;
+
+  position: relative;
+  display: flex;
+  isolation: isolate;
+  height: 3.5rem;
+  border-block-end: 1px solid var(--secondary-color);
+}
+
+.tabs input {
+  display: none;
+}
+
+.tabs label {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+.tabs input:checked + label {
+  color: var(--primary-color);
+}
+
+.tabs::after {
+  pointer-events: none;
+  position: absolute;
+  content: "";
+  z-index: -1;
+  inset: 0 0 -1px;
+  width: calc((100% / var(--tab-count)) - 2px);
+  border-radius: 0.5rem 0.5rem 0 0;
+  border: 1px solid var(--secondary-color);
+  border-block-end: none;
+  background-color: var(--light-color);
+  translate: calc(var(--active) * 100%);
+  transition: translate 0.5s ease-in-out;
+}
+
+.tabs:has(:checked:nth-of-type(1)) {
+  --active: 0;
+}
+
+.tabs:has(:checked:nth-of-type(2)) {
+  --active: 1;
+}
+
+.tabs:has(:checked:nth-of-type(3)) {
+  --active: 2;
+}
+
+.tabs:has(:checked:nth-of-type(4)) {
+  --active: 3;
+}
+
+.tabs:has(:checked:nth-of-type(5)) {
+  --active: 4;
+}
+
+[class^="tab-content-"] {
+  display: none;
+}
+
+.widget:has(:checked:nth-of-type(1)) .tab-content-1,
+.widget:has(:checked:nth-of-type(2)) .tab-content-2,
+.widget:has(:checked:nth-of-type(3)) .tab-content-3, 
+.widget:has(:checked:nth-of-type(4)) .tab-content-4, 
+.widget:has(:checked:nth-of-type(5)) .tab-content-5 {
+  display: block;
+}
+
+.tab-content-1,
+.tab-content-2,
+.tab-content-3, 
+.tab-content-4, 
+.tab-content-5 {
+    text-align: center;
+}
+
+.tab-content-1 img,
+.tab-content-2 img,
+.tab-content-3 img, 
+.tab-content-4 img, 
+.tab-content-5 img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
 }
 
 footer {
@@ -177,7 +338,7 @@ footer {
   width: 100%;
   color: white;
   text-align: center;
-  background-color: #b74b4b;
+  background-color: var(--primary-color);
   border-top: 1px solid black;
 }
 
