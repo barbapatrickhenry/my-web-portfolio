@@ -16,7 +16,7 @@
 				<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
 			</label>
 			<label id="overlay" for="sidebar-active"></label>
-			<ul class="links-container">
+			<ul class="container-links">
 				<label for="sidebar-active" class="close-sidebar-button">
 					<svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
 				</label>
@@ -25,7 +25,7 @@
 				<li><a href="#skills-section">Skills</a></li>
 				<li><a href="#education-section">Education</a></li>
 				<li><a href="#experience-section">Experience</a></li>
-				<li><a href="#contact-section">Contact</a></li>
+				<li><a href="#contact-section">Contacts</a></li>
 			</ul>
 		</nav>
 	</section>
@@ -60,33 +60,31 @@
     <!-- Projects Section Start -->
     <section id="projects-section">
       <h1 class="project-title">Projects</h1>
-      <div class="container-project">
-        <div class="card-container">
-          <div class="card">
-            <img src="images/frontendimage.jpg">
-            <div class="card-content">
-              <h3>Web Developer Portfolio</h3>
-              <p>A Web Developer Portfolio created using HTML, CSS, and Bootstrap. It is an online collection of my best projects that accurately represent my skills, abilities, and the quality of my work.</p>
-              <a href="#about-me-section" class="btn">Go</a>
-            </div>
+      <div class="card-container">
+        <div class="card">
+          <img src="images/frontendimage.jpg">
+          <div class="card-content">
+            <h3>Web Developer Portfolio</h3>
+            <p>A Web Developer Portfolio created using HTML, CSS, and Bootstrap. It is an online collection of my best projects that accurately represent my skills, abilities, and the quality of my work.</p>
+            <a href="#about-me-section" class="btn">Go</a>
           </div>
+        </div>
 
-          <div class="card">
-            <img src="images/backendimage.png">
-            <div class="card-content">
-              <h3>Project 2</h3>
-              <p>Work in progress.</p>
-              <a href="#" class="btn">Go</a>
-            </div>
+        <div class="card">
+          <img src="images/backendimage.png">
+          <div class="card-content">
+            <h3>Project 2</h3>
+            <p>Work in progress.</p>
+            <a href="#" class="btn">Go</a>
           </div>
+        </div>
 
-          <div class="card">
-            <img src="images/fullstackimage.png">
-            <div class="card-content">
-              <h3>Project 3</h3>
-              <p>Work in progress.</p>
-              <a href="#" class="btn">Go</a>
-            </div>
+        <div class="card">
+          <img src="images/fullstackimage.png">
+          <div class="card-content">
+            <h3>Project 3</h3>
+            <p>Work in progress.</p>
+            <a href="#" class="btn">Go</a>
           </div>
         </div>
       </div>
@@ -96,7 +94,7 @@
     <!-- Skills Section Start -->
     <section id="skills-section">
       <h1 class="skills-title">Skills and Tools</h1>
-      <div class="widget container-skills">
+      <div class="widget">
         <div class="tabs">
           <input type="radio" id="front-end" name="tabs" checked>
           <label for="front-end">Front-End</label>
@@ -227,6 +225,35 @@
       </div>
     </section>
     <!-- Skills Section End -->
+
+    <!-- Education Section Start -->
+    <section id="education-section">
+        <h1 class="education-title">Education</h1>
+        <h2>Zuitt Coding Bootcamp (Web Developer Program)</h2>
+        <a href="https://zuitt.co/"><img src="./images/zuitt-logo.png" alt="zuitt-logo"></a>
+        <ul>
+          <li><span style="color: #b74b4b;"><i>Python Short Course Package</i></span> - Python and Django (June 18, 2024 - June 28, 2024)</li>
+          <li><span style="color: #b74b4b;"><i>AWS Short Course Package</i></span> - AWS Foundational Concepts (EC2 and S3), AWS Serverless Deployment (Lambda, API Gateway, and DynamoDB), and AWS Managed Services (SNS, SES, and SQS). (May 20, 2024 - June 7, 2024)</li>
+          <li><span style="color: #b74b4b;"><i>PHP Short Course Package</i></span> - MySQL, PHP, and Laravel. (April 15, 2024 - May 3, 2024)</li>
+          <li><span style="color: #b74b4b;"><i>Tester Essentials Short Course Package</i></span> - Testing, encompassing Unit Testing, Test Driven Development, Test Suites using Mocha, Assertions using Chai, Backend Testing using Chai-Http and Frontend Testing using Selenium Web Driver. (April 1, 2024 - April 5, 2024)</li>
+          <li><span style="color: #b74b4b;"><i>Main Course Package (MERN)</i></span> - Full-Stack Web Development. (November 6, 2023 - March 18, 2024)</li>
+        </ul>
+        <h2>Mapua Institue of Technology Makati (now Mapua University Makati)</h2>
+        <a href="https://www.mapua.edu.ph/"><img src="./images/mapua-logo.png" alt="mapua-logo"></a>
+        <img src="./images/information-technology-img.webp" alt="it-img">
+        <p><span style="color: #b74b4b;"><i>Bachelor of Science in Information Technology</i></span> (2013 Discontinued)</p>
+        <h2>Mapua Institue of Technology (now Mapua University)</h2>
+        <a href="https://www.mapua.edu.ph/"><img src="./images/mapua-logo.png" alt="zuitt-logo"></a>
+        <img src="./images/computer-engineering-img.webp" alt="computer-engineering-img">
+        <p><span style="color: #b74b4b;"><i>Bachelor of Science in Computer Engineering</i></span> (Completed 207 credits - 2004-2009 Discontinued)</p>
+    </section>
+    <!-- Education Section End -->
+
+    <!-- Experience Section Start  -->
+    <!-- Experience Section End  -->
+
+    <!-- Contacts Section Start -->
+    <!-- Contacts Section End -->
 
     <!-- Footer Start -->
     <footer id="footer-section">

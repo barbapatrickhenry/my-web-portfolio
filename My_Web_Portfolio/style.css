@@ -4,6 +4,7 @@
 	--primary-color: #b74b4b;
 	--secondary-color: #ca8a04;
   --light-color: #f0f8ff;
+  --dark-color: #0c0c0c;
 	--text-color: #f0f0f0;
 	--navbar-color: #0f1016;
 }
@@ -17,6 +18,7 @@
 html {
 	font-size: 12pt;
 	font-family: Poppins, 'Segoe UI', Tahoma, sans-serif;
+  scroll-behavior: smooth;
 }
 
 nav {
@@ -33,7 +35,7 @@ nav {
   z-index: 1000;
 }
 
-.links-container {
+.container-links {
 	height: 100%;
 	width: 100%;
 	display: flex;
@@ -43,7 +45,7 @@ nav {
 	margin-right: 1rem;
 }
 
-nav ul {
+ul {
 	list-style: none;
 }
 
@@ -90,26 +92,28 @@ h1.logo:hover {
 }
 
 #about-me-section {
-  background-color: black;
+  background-color: var(--dark-color);
   color: var(--text-color);
 }
 
 #projects-section {
   background-color: var(--light-color);
+  color: var(--dark-color);
 }
 
 #skills-section {
   background-color: var(--secondary-color);
+  color: var(--primary-color);
 }
 
-#container-project {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#education-section {
+  background-color: var(--dark-color);
+  color: var(--secondary-color);
 }
 
 h1.project-title,
-h1.skills-title {
+h1.skills-title,
+h1.education-title {
   text-align: center;
   font-size: 2.5rem;
   margin: 3rem 0;
@@ -117,13 +121,39 @@ h1.skills-title {
 }
 
 #projects-section,
-#skills-section {
+#skills-section,
+#education-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 3rem 0;
   min-height: calc(100vh - 60px);
+  padding-bottom: 60px;
+}
+
+#education-section h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+#education-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#education-section ul li {
+  margin: 0.5rem 0;
+}
+
+#education-section img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+#education-section ul {
+  max-width: 50%;
 }
 
 .card-container {
@@ -183,12 +213,6 @@ h1.skills-title {
   align-self: center; 
 }
 
-.skills-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .tab-content-1 h2,
 .tab-content-2 h2,
 .tab-content-3 h2,
@@ -209,6 +233,7 @@ h1.skills-title {
 .tab-content-5 ul li {
   list-style: none;
   text-align: left;
+  color: black;
 }
 
 .tab-content-1 ul li:not,
@@ -535,7 +560,7 @@ typing-text span:after {
 }
 
 @media(width < 992px) {
-  .links-container {
+  .container-links {
     flex-direction: column;
     align-items: flex-start;
 
@@ -578,7 +603,7 @@ typing-text span:after {
     color: var(--secondary-color);
   }
 
-  #sidebar-active:checked ~ .links-container {
+  #sidebar-active:checked ~ .container-links {
     right: 0;
   }
 
