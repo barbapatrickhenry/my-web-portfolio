@@ -91,24 +91,42 @@ h1.logo:hover {
 	color: var(--secondary-color);
 }
 
+#about-me-section,
+#projects-section,
+#skills-section,
+#education-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 60px);
+  min-height: 100vh;
+  padding-top: 3rem 0;
+}
+
 #about-me-section {
   background-color: var(--dark-color);
   color: var(--text-color);
+  flex-wrap: wrap;
 }
 
 #projects-section {
   background-color: var(--light-color);
   color: var(--dark-color);
+  flex-direction: column;
+  padding-bottom: 60px;
 }
 
 #skills-section {
   background-color: var(--secondary-color);
   color: var(--primary-color);
+  flex-direction: column;
 }
 
 #education-section {
   background-color: var(--dark-color);
   color: var(--secondary-color);
+  flex-direction: column;
+  padding-bottom: 80px;
 }
 
 h1.project-title,
@@ -120,40 +138,185 @@ h1.education-title {
   padding: 0;
 }
 
-#projects-section,
-#skills-section,
-#education-section {
+h1.project-title{
+  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"
+}
+
+h1.skills-title {
+  background: -webkit-linear-gradient(#b74b4b, #0c0c0c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"
+}
+
+h1.education-title {
+  background: -webkit-linear-gradient(#f0f8ff, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"
+}
+
+.item {
+  flex: 0 0 auto; 
+  margin: 1rem; 
+}
+
+.item img {
+  border-radius: 50%;
+  max-width: 100%; 
+  height: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+.about {
+  max-width: 600px; 
+}
+
+.typing-text {
+  font-size: 34px;
+  font-weight: 600;
+  min-width: 280px;
+  color: white;
+}
+
+.typing-text span {
+  position: relative;
+}
+
+.typing-text span:before {
+  content: "Web Developer";
+  color: #b74b4b;
+  animation: words 20s infinite;
+}
+
+typing-text span:after {
+  content:"";
+  background-color: black;
+  position: absolute;
+  width: calc(100% + 8px);
+  height: 100%;
+  border-left: 3px solid black;
+  right: -8;
+  animation: cursor 0.6s infinite;
+}
+
+@keyframes words {
+  0%, 20% {
+    content: "Web Developer";
+  }
+  21%, 40% {
+    content: "Front-End Developer";
+  }
+  41%, 60% {
+    content: "Back-End Developer";
+  }
+  61%, 80% {
+    content: "Full Stack Developer";
+  }
+  81%, 100% {
+    content: "Computer Programmer";
+  }
+}
+
+.subtitle {
+  letter-spacing: 2px;
+  color: var(--text-light);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 3rem;
+  color: white;
+  margin-bottom: 0;
+}
+
+.title span {
+  font-weight: 600;
+}
+
+.description {
+  line-height: 1.5rem;
+  color: var(--text-light);
+  margin-bottom: 2rem;
+}
+
+.action-btns {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 0;
-  min-height: calc(100vh - 60px);
-  padding-bottom: 60px;
+  gap: 1rem;
+}
+
+.action-btns button {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  padding: 1rem 2rem;
+  outline: none;
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hire-me {
+  background-color: var(--primary-color);
+  color: #ffffff;
+}
+
+.hire-me:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.portfolio {
+  color: var(--primary-color);
+}
+
+.portfolio:hover {
+  background-color: var(--primary-color-dark);
+  color: #ffffff;
 }
 
 #education-section h2 {
   font-size: 1.5rem;
   margin: 1rem 0;
+  color: white;
+
+  display: inline;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#education-section h2.zuitt {  
+  background-image: linear-gradient(to right, #6bcbdb, #2c2c3c);
+}
+
+#education-section h2.mapua {  
+  background-image: linear-gradient(to right, #b74b4b, #ca8a04);
 }
 
 #education-section ul {
   list-style-type: none;
-  padding: 0;
+  max-width: 50%;
+  margin: 1rem 0;
 }
 
 #education-section ul li {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
+}
+
+#education-section p {
+  margin: 1rem 0;
 }
 
 #education-section img {
   max-width: 100%;
   height: auto;
   margin: 1rem 0;
-}
-
-#education-section ul {
-  max-width: 50%;
 }
 
 .card-container {
@@ -173,6 +336,12 @@ h1.education-title {
   display: flex;
   flex-direction: column;
   margin: 0 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card img {
@@ -376,170 +545,47 @@ footer {
   margin: 1rem;
 }
 
-.phone-icon {
-  display: none;
-  margin: 1rem;
-}
-
-.tablet-icon {
-  display: none;
-  margin: 1rem;
-}
-
-.laptop-icon {
-  display: none;
-  margin: 1rem;
-}
-
+.phone-icon,
+.tablet-icon,
+.laptop-icon,
 .computer-icon {
   display: none;
   margin: 1rem;
+}
+
+.clock-icon:hover,
+.phone-icon:hover,
+.tablet-icon:hover,
+.laptop-icon:hover,
+.computer-icon:hover {
+  fill: var(--secondary-color);
 }
 
 .copyright {
   display: flex;
 }
 
+#datetime:hover,
+.copyright:hover, 
+#screen-size-text:hover {
+  color: var(--secondary-color);
+}
+
 .copyright div{
   padding-right: 2rem;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 60px);
-  flex-wrap: wrap;
-  padding-top: 2.5rem;
-}
-
-.item {
-  flex: 0 0 auto; 
-  margin: 1rem; 
-}
-
-.item img {
-  border-radius: 100%;
-  max-width: 100%; 
-  height: auto; 
-}
-
-.about {
-  max-width: 600px; 
-}
-
-.typing-text {
-  font-size: 34px;
-  font-weight: 600;
-  min-width: 280px;
-  color: white;
-}
-
-.typing-text span {
-  position: relative;
-}
-
-.typing-text span:before {
-  content: "Web Developer";
-  color: #b74b4b;
-  animation: words 20s infinite;
-}
-
-typing-text span:after {
-  content:"";
-  background-color: black;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid black;
-  right: -8;
-  animation: cursor 0.6s infinite;
-}
-
-@keyframes words {
-  0%, 20% {
-    content: "Web Developer";
-  }
-  21%, 40% {
-    content: "Front-End Developer";
-  }
-  41%, 60% {
-    content: "Back-End Developer";
-  }
-  61%, 80% {
-    content: "Full Stack Developer";
-  }
-  81%, 100% {
-    content: "Computer Programmer";
-  }
-}
-
-.subtitle {
-  letter-spacing: 2px;
-  color: var(--text-light);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.title {
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 3rem;
-  color: white;
-  margin-bottom: 0;
-}
-
-.title span {
-  font-weight: 600;
-}
-
-.description {
-  line-height: 1.5rem;
-  color: var(--text-light);
-  margin-bottom: 2rem;
-}
-
-.action-btns {
-  display: flex;
-  gap: 1rem;
-}
-
-.action-btns button {
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  padding: 1rem 2rem;
-  outline: none;
-  border: 2px solid var(--primary-color);
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.hire-me {
-  background-color: var(--primary-color);
-  color: #ffffff;
-}
-
-.hire-me:hover {
-  background-color: var(--primary-color-dark);
-}
-
-.portfolio {
-  color: var(--primary-color);
-}
-
-.portfolio:hover {
-  background-color: var(--primary-color-dark);
-  color: #ffffff;
 }
 
 /* Responsive Adjustments */
 
 @media (width <= 1280px) {
   
-  .container {
+  #about-me-section {
     text-align: center;
+    padding-top: 3rem;
+  }
+
+  #about-me-section img {
+    margin-top: 1rem;
   }
 
   .action-btns {
@@ -553,7 +599,8 @@ typing-text span:after {
   }
 }
 
-@media (min-device-width: 993px) and (max-device-width: 1199px) {
+@media (min-device-width: 993px) 
+and (max-device-width: 1199px) {
   .laptop-icon {
     display: flex;
   }
@@ -594,12 +641,16 @@ typing-text span:after {
     color: var(--secondary-color);
   }
 
-  .open-sidebar-button, .close-sidebar-button {
+  .open-sidebar-button, 
+  .close-sidebar-button {
     padding: 20px;
     display: block;
   }
 
-  .open-sidebar-button:hover, .open-sidebar-button:active, .close-sidebar-button:hover, .close-sidebar-button:active {
+  .open-sidebar-button:hover, 
+  .open-sidebar-button:active, 
+  .close-sidebar-button:hover, 
+  .close-sidebar-button:active {
     color: var(--secondary-color);
   }
 
@@ -663,8 +714,8 @@ typing-text span:after {
 }
 
 @media (width < 650px) {
-  .container {
-    padding: 1rem; 
+  #about-me-section {
+    padding: 60px; 
   }
 
   .item {
@@ -692,6 +743,12 @@ typing-text span:after {
 
 }
 
+@media (width <= 540px) {
+  #about-me-section img {
+    margin-top: 1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .typing-text {
     font-size: 22px; 
@@ -716,13 +773,10 @@ typing-text span:after {
   }
 }
 
-@media (max-height: 1024px) {
-  .container {
-    padding-top: 3rem;
-  }
+@media (max-height: 1180px) {
 
-  #about-me-section {
-    padding: 1rem; 
+  #about-me-section img {
+    margin-top: 1rem;
   }
 
   .typing-text {
