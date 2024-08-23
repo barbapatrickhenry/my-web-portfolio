@@ -94,7 +94,8 @@ h1.logo:hover {
 #about-me-section,
 #projects-section,
 #skills-section,
-#education-section {
+#education-section,
+#experience-section {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,9 +130,16 @@ h1.logo:hover {
   padding-bottom: 80px;
 }
 
+#experience-section {
+  color: var(--dark-color);
+  flex-direction: column;
+  padding-bottom: 60px;
+}
+
 h1.project-title,
 h1.skills-title,
-h1.education-title {
+h1.education-title,
+h1.experience-title {
   text-align: center;
   font-size: 2.5rem;
   margin: 3rem 0;
@@ -152,6 +160,18 @@ h1.skills-title {
 
 h1.education-title {
   background: -webkit-linear-gradient(#f0f8ff, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"
+}
+
+h1.experience-title {
+  background: -webkit-linear-gradient(#ca8a04, #0c0c0c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;"
+}
+
+h1.experience-title {
+  background: -webkit-linear-gradient(#ca8a04, #0c0c0c);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;"
 }
@@ -278,7 +298,7 @@ typing-text span:after {
   color: #ffffff;
 }
 
-#education-section h2 {
+#education-section h2, #experience-section h2 {
   font-size: 1.5rem;
   margin: 1rem 0;
   color: white;
@@ -299,13 +319,13 @@ typing-text span:after {
   background-image: linear-gradient(to right, #b74b4b, #ca8a04);
 }
 
-#education-section ul {
+#education-section ul, #experience-section ul {
   list-style-type: none;
   max-width: 50%;
   margin: 1rem 0;
 }
 
-#education-section ul li {
+#education-section ul li, #experience-section ul li {
   margin: 1rem 0;
 }
 
@@ -317,6 +337,18 @@ typing-text span:after {
   max-width: 100%;
   height: auto;
   margin: 1rem 0;
+}
+
+#experience-section h2 {
+  background-image: linear-gradient(to right, #d02827, #496d39);
+}
+
+#experience-section h3 {
+  color: #d02827;
+}
+
+#experience-section ul li {
+  color: #496d39;
 }
 
 .card-container {
@@ -566,7 +598,7 @@ footer {
 }
 
 #datetime:hover,
-.copyright:hover, 
+.copyright div:hover, 
 #screen-size-text:hover {
   color: var(--secondary-color);
 }
