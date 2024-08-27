@@ -31,29 +31,29 @@
 	</section>
 	<!-- Navbar Section End -->
 
-	<!-- About Me Section Start -->
-    <section id="about-me-section">
-        <div class="item" >
-            <img src="./images/profile.jpg" alt="Profile picture of Patrick Henry Barba" />
-          </div>
-          <div class="item about">
-            <div>
-              <p class="subtitle">HELLO</p>
-              <h1 class="title">
-                It's <span>Patrick</span>
-              </h1>
-              <h3 ><div class="typing-text" title="Occupation">I'm a <span></span></div></h3>
-              <p class="description">
-                Welcome to my web developer portfolio! I'm Patrick, a passionate web developer with a knack for crafting seamless, engaging, responsive, and user-friendly websites. I thrive on solving complex problems and translating ideas into clean, efficient code. I believe in the power of collaboration and communication, and I’m always eager to partner with clients and teams to bring innovative projects to life.
-              </p>
-              <div class="action-btns">
-                <button class="hire-me">Hire Me</button>
-                <button class="portfolio">Portfolio</button>
-              </div>
-            </div>
+	<!-- Home Section Start -->
+  <section id="home-section">
+    <div class="item" >
+      <img src="./images/profile.jpg" alt="Profile picture of Patrick Henry Barba" />
+    </div>
+    <div class="item about">
+      <div>
+        <p class="subtitle">HELLO</p>
+        <h1 class="title">
+          It's <span>Patrick</span>
+        </h1>
+        <h3 ><div class="typing-text" title="Occupation">I'm a <span></span></div></h3>
+        <p class="description">
+          Welcome to my web developer portfolio! I'm Patrick, a passionate web developer with a knack for crafting seamless, engaging, responsive, and user-friendly websites. I thrive on solving complex problems and translating ideas into clean, efficient code. I believe in the power of collaboration and communication, and I’m always eager to partner with clients and teams to bring innovative projects to life.
+        </p>
+        <div class="action-btns">
+          <button class="hire-me">Hire Me</button>
+          <button class="resume">Resume</button>
         </div>
-    </section>
-    <!-- About Me Section End -->
+      </div>
+    </div>
+  </section>
+  <!-- Home Section End -->
 
     <!-- Projects Section Start -->
     <section id="projects-section">
@@ -263,7 +263,7 @@
     <section id="contacts-section">
       <div class="content">
         <h1 class="contacts-title">Contact Me</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adpisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>I would love to respond to your queries and help you succeed. Feel free to get in touch with me.</p>
       </div>
       <div class="socials-container">
         <a data-social="Facebook" style="--accent-color: #076eee;" href="https://www.facebook.com/pat.barba.9">
@@ -309,16 +309,22 @@
             <h2>Send Message</h2>
             <input type="hidden" name="access_key" value="aa1ad7ea-ffc1-4473-8fb5-f3ee94996ac3">
             <div class="inputBox">
-              <input type="text" name="full-name" required="required">
-              <span>Full Name</span>
+              <!-- <input type="text" name="full-name" required="required">
+              <span>Full Name</span> -->
+              <input type="text" id="name" name="full-name" required="required">
+              <label for="name" class="input-label">Full Name</label>
             </div>
             <div class="inputBox">
-              <input type="text" name="email" required="required">
-              <span>Email</span>
+              <!-- <input type="text" name="email" required="required">
+              <span>Email</span> -->
+              <input type="text" id="email" name="email" required="required">
+              <label for="email" class="input-label">Email Address</label>
             </div>
             <div class="inputBox">
-              <textarea name="message" required="required"></textarea>
-              <span>Type your Message...</span>
+              <!-- <textarea name="message" rows="3" required="required"></textarea>
+              <span>Type your Message...</span> -->
+              <textarea id="message" name="message" rows="3" required="required"></textarea>
+              <label for="message" class="input-label">Message Here</label>
             </div>
             <div class="inputBox">
               <button type="submit">Send</button>
