@@ -165,45 +165,32 @@ h1.education-title,
 h1.experience-title,
 h1.contacts-title {
   text-align: center;
-  font-size: 2.5rem;
-  margin: 3rem 0;
-  padding: 0;
+  margin: 3rem 1rem;
+  font-size: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  color: white;
+  column-gap: 1.6rem;
+  background: var(--accent-color-title);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-h1.project-title{
-  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
-}
-
-h1.skills-title {
-  background: -webkit-linear-gradient(#b74b4b, #0c0c0c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
-}
-
-h1.education-title {
-  background: -webkit-linear-gradient(#f0f8ff, #ca8a04);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
-}
-
-h1.experience-title {
-  background: -webkit-linear-gradient(#ca8a04, #0c0c0c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
-}
-
-h1.experience-title {
-  background: -webkit-linear-gradient(#ca8a04, #0c0c0c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
-}
-
-h1.contacts-title {
-  background: -webkit-linear-gradient(#0c0c0c, #b74b4b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;"
+h1.project-title::before,
+h1.project-title::after,
+h1.skills-title::before,
+h1.skills-title::after,
+h1.education-title::before,
+h1.education-title::after,
+h1.experience-title::before,
+h1.experience-title::after,
+h1.contacts-title::before,
+h1.contacts-title::after {
+  content: "";
+  height: 2px;
+  display: block;
+  background: var(--accent-color-title);
 }
 /*Section Titles End*/
 
@@ -341,18 +328,21 @@ typing-text span:after {
 
   display: inline;
   padding: 0.25rem 0.5rem;
-  border: 1px solid;
 
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 }
 
 #education-section h2.zuitt {  
-  background-image: linear-gradient(to right, #6bcbdb, #2c2c3c);
+  background: -webkit-linear-gradient(#6bcbdb, #2c2c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #education-section h2.mapua {  
-  background-image: linear-gradient(to right, #b74b4b, #ca8a04);
+  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #education-section ul, #experience-section ul {
@@ -376,7 +366,9 @@ typing-text span:after {
 }
 
 #experience-section h2 {
-  background-image: linear-gradient(to right, #d02827, #496d39);
+  background: -webkit-linear-gradient(#d02827, #496d39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #experience-section h3 {
@@ -760,7 +752,7 @@ typing-text span:after {
 .socials-container a::before{
   content: attr(data-social);
   position: absolute;
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-social);
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
@@ -771,7 +763,7 @@ typing-text span:after {
   transition: 200ms cubic-bezier(.42,0,.44,1.68);
 }
 .socials-container a:hover{
-  background-color: var(--accent-color);
+  background-color: var(--accent-color-social);
   fill: white;
 }
 .socials-container a::after{
@@ -781,7 +773,7 @@ typing-text span:after {
   width: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 10px solid var(--accent-color);
+  border-top: 10px solid var(--accent-color-social);
   transform: translateY(0) rotate(25deg);
   opacity: 0;
   transition: 200ms cubic-bezier(.42,0,.44,1.68);
