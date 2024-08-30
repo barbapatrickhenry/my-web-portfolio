@@ -212,50 +212,31 @@ h1.contacts-title::after {
   max-width: 600px; 
 }
 
-.typing-text {
+#typewriter {
+  color: var(--primary-color);
+}
+
+#cursor {
+  color: var(--primary-color);
+  animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 100%;
+  }
+
+  50% {
+    opacity: 0%;
+  }
+}
+
+.about div h3 {
   font-size: 34px;
   font-weight: 600;
   min-width: 280px;
   color: white;
-}
-
-.typing-text span {
-  position: relative;
-}
-
-.typing-text span:before {
-  content: "Web Developer";
-  color: #b74b4b;
-  animation: words 20s infinite;
-}
-
-typing-text span:after {
-  content:"";
-  background-color: black;
-  position: absolute;
-  width: calc(100% + 8px);
-  height: 100%;
-  border-left: 3px solid black;
-  right: -8;
-  animation: cursor 0.6s infinite;
-}
-
-@keyframes words {
-  0%, 20% {
-    content: "Web Developer";
-  }
-  21%, 40% {
-    content: "Front-End Developer";
-  }
-  41%, 60% {
-    content: "Back-End Developer";
-  }
-  61%, 80% {
-    content: "Full Stack Developer";
-  }
-  81%, 100% {
-    content: "Computer Programmer";
-  }
+  animation: typing 2s steps;
 }
 
 .subtitle {
@@ -318,67 +299,6 @@ typing-text span:after {
   color: #ffffff;
 }
 /*About Me Section End*/
-
-
-/*Education Section and Experience Section End*/
-#education-section h2, #experience-section h2 {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: white;
-
-  display: inline;
-  padding: 0.25rem 0.5rem;
-
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-#education-section h2.zuitt {  
-  background: -webkit-linear-gradient(#6bcbdb, #2c2c3c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#education-section h2.mapua {  
-  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#education-section ul, #experience-section ul {
-  list-style-type: none;
-  max-width: 50%;
-  margin: 1rem 0;
-}
-
-#education-section ul li, #experience-section ul li {
-  margin: 1rem 0;
-}
-
-#education-section p {
-  margin: 1rem 0;
-}
-
-#education-section img {
-  max-width: 100%;
-  height: auto;
-  margin: 1rem 0;
-}
-
-#experience-section h2 {
-  background: -webkit-linear-gradient(#d02827, #496d39);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#experience-section h3 {
-  color: #d02827;
-}
-
-#experience-section ul li {
-  color: #496d39;
-}
-/*Education Section and Experience Section End*/
 
 
 /*Project Section Start*/
@@ -446,6 +366,67 @@ typing-text span:after {
   align-self: center; 
 }
 /*Project Section End*/
+
+
+/*Education Section and Experience Section End*/
+#education-section h2, #experience-section h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: white;
+
+  display: inline;
+  padding: 0.25rem 0.5rem;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#education-section h2.zuitt {  
+  background: -webkit-linear-gradient(#6bcbdb, #2c2c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#education-section h2.mapua {  
+  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#education-section ul, #experience-section ul {
+  list-style-type: none;
+  max-width: 50%;
+  margin: 1rem 0;
+}
+
+#education-section ul li, #experience-section ul li {
+  margin: 1rem 0;
+}
+
+#education-section p {
+  margin: 1rem 0;
+}
+
+#education-section img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+#experience-section h2 {
+  background: -webkit-linear-gradient(#d02827, #496d39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#experience-section h3 {
+  color: #d02827;
+}
+
+#experience-section ul li {
+  color: #496d39;
+}
+/*Education Section and Experience Section End*/
 
 
 /*Skills Section Start*/

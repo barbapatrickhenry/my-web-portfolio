@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Patrick Henry Barba || Web Developer Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 	<!-- Navbar Section Start -->
@@ -38,14 +39,13 @@
     </div>
     <div class="item about">
       <div>
-        <p class="subtitle">HELLO</p>
+        <p class="subtitle">HELLO 👋</p>
         <h1 class="title">
           It's <span>Patrick</span>
         </h1>
-        <h3 ><div class="typing-text" title="Occupation">I'm a <span></span></div></h3>
+        <h3 >I'm a <span id="typewriter"></span><span id="cursor">|</span></h3>
         <p class="description">
-          Welcome to my web developer portfolio! I'm Patrick, a passionate web developer with a knack for crafting seamless, engaging, responsive, and user-friendly websites. I thrive on solving complex problems and translating ideas into clean, efficient code. I believe in the power of collaboration and communication, and I’m always eager to partner with clients and teams to bring innovative projects to life.
-        </p>
+          Welcome to my web developer portfolio! I'm Patrick, an aspiring web developer with a passion for creating clean, responsive, and user-friendly websites. I’m excited about diving into new challenges and turning ideas into functional, efficient code. I believe in the importance of collaboration and clear communication, and I’m eager to work with clients and teams to bring fresh, innovative projects to life.
         <div class="action-btns">
           <button class="hire-me">Hire Me</button>
           <button class="resume">Resume</button>
@@ -327,7 +327,7 @@
               <label for="message" class="input-label">Message Here</label>
             </div>
             <div class="inputBox">
-              <button type="submit">Send</button>
+              <button type="submit" class="btn btn-border-pop">Send</button>
             </div>
           </form>
         </div>
@@ -365,6 +365,50 @@
       </div>
     </footer>
     <!-- Footer End -->
+
+    <!-- Typing Text Script Start -->
+    <script>
+        function sleep(ms) {
+          return new Promise((resolve) => setTimeout(resolve, ms));
+        }
+
+        const occupations = ["Web Developer", "Front-End Developer", "Back-End Developer", "Full Stack Developer", "Computer Programmer"];
+
+        const element = document.getElementById("typewriter");
+
+        let sleepTime = 100;
+
+        let curOccupationIndex = 0;
+
+        const writeLoop = async () => {
+          while(true) {
+            let curOccupation = occupations[curOccupationIndex];
+
+            for(let  i = 0; i < curOccupation.length; i++) {
+              element.innerText = curOccupation.substring(0, i + 1);
+              await sleep(sleepTime);
+            }
+
+            await sleep(sleepTime * 10);
+
+            for(let  i = curOccupation.length; i > 0; i--) {
+              element.innerText = curOccupation.substring(0, i - 1);
+              await sleep(sleepTime);
+            }
+
+            await sleep(sleepTime * 5);
+
+            if(curOccupationIndex === occupations.length - 1) {
+              curOccupationIndex = 0;
+            } else {
+              curOccupationIndex++;
+            }
+          }
+        };
+
+        writeLoop();
+    </script>
+    <!-- Typing Text Script End -->
 
     <!-- DateTime Script Start -->
     <script>
