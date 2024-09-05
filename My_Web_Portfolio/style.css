@@ -430,79 +430,6 @@ h1.contacts-title::after {
 /*Project Section End*/
 
 
-/*Education Section and Experience Section End*/
-#education-section h2, #experience-section h2 {
-  font-size: 1.5rem;
-  margin: 1rem 0;
-  color: white;
-
-  display: inline;
-  padding: 0.25rem 0.5rem;
-
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-}
-
-#education-section h2.zuitt {  
-  background: -webkit-linear-gradient(#6bcbdb, #2c2c3c);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#education-section h2.mapua {  
-  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#education-section ul, #experience-section ul {
-  max-width: 50%;
-  margin: 1rem 0;
-}
-
-#education-section ul li, #experience-section ul li {
-  margin: 1rem 0;
-}
-
-#education-section p {
-  margin: 1rem 0;
-  color: var(--dusty-red-color);
-}
-
-#education-section img {
-  max-width: 100%;
-  height: auto;
-  margin: 1rem 0;
-}
-
-#experience-section h2 {
-  background: -webkit-linear-gradient(#d02827, #496d39);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-#experience-section h3 {
-  color: var(--fire-engine-red-color);
-}
-
-#education-section ul {
-  color: white;
-}
-
-#experience-section ul li {
-  color: var(--forest-green);
-}
-
-
-
-#education-section ul li span {
-  color: var(--blue-hosta-color);
-}
-
-
-/*Education Section and Experience Section End*/
-
-
 /*Skills Section Start*/
 .tab-content-1 h2,
 .tab-content-2 h2,
@@ -651,6 +578,87 @@ h1.contacts-title::after {
   color: var(--dusty-red-color);
 }
 /*Skills Section End*/
+
+
+/*Education Section and Experience Section End*/
+#education-section h2, #experience-section h2 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: white;
+
+  display: inline;
+  padding: 0.25rem 0.5rem;
+
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+#education-section h2.zuitt {  
+  background: -webkit-linear-gradient(#6bcbdb, #2c2c3c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#education-section h2.mapua {  
+  background: -webkit-linear-gradient(#b74b4b, #ca8a04);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#education-section ul, #experience-section ul {
+  max-width: 50%;
+  margin: 1rem 0;
+}
+
+#education-section ul li, #experience-section ul li {
+  margin: 1rem 0;
+}
+
+#education-section p {
+  margin: 1rem 0;
+  color: var(--dusty-red-color);
+}
+
+#education-section img {
+  max-width: 100%;
+  height: auto;
+  margin: 1rem 0;
+}
+
+#education-section img {
+  -webkit-filter: sepia(100%);
+  filter: sepia(100%);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+#education-section img:hover {
+  -webkit-filter: sepia(0);
+  filter: sepia(0);
+}
+
+#experience-section h2 {
+  background: -webkit-linear-gradient(#d02827, #496d39);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#experience-section h3 {
+  color: var(--fire-engine-red-color);
+}
+
+#education-section ul {
+  color: white;
+}
+
+#experience-section ul li {
+  color: var(--forest-green);
+}
+
+#education-section ul li span {
+  color: var(--blue-hosta-color);
+}
+/*Education Section and Experience Section End*/
 
 
 /*Contacts Section Start*/
