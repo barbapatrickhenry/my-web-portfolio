@@ -717,6 +717,14 @@ h1.contacts-title::after {
   align-items: center;
   border-radius: 50%;
   font-size: 22px;
+  position: relative;
+  transition: .5s;
+}
+
+.contact-container .contactInfo .box .icon:hover {
+  background: var(--dusty-red-color);
+  fill: var(--platinum-color);
+  transform: rotateY(360deg);
 }
 
 .contact-container .contactInfo .box .text {
