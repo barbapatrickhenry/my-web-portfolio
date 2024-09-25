@@ -667,6 +667,20 @@ h1.contacts-title::after {
 #education-section ul li span {
   color: var(--blue-hosta-color);
 }
+
+.zuitt-section, .mapua-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+  width: 50%;
+  gap: 2rem;
+}
+
+img.zuitt-pic, img.mapua-pic {
+  width: 50%;
+}
+
 /*Education Section and Experience Section End*/
 
 
@@ -1078,6 +1092,11 @@ and (max-device-width: 1199px) {
 
   #datetime {
     padding-left: 1rem;
+  }
+
+  .zuitt-section, .mapua-section {
+    flex-direction: column;
+    align-items: center; 
   }
 }
 
